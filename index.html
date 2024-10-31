@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atölye Notları</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@v2.3.0/dist/zero-md.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="burger-icon" onclick="toggleSidebar()">☰</div>
+        <div class="title" id="csvTitle">Başlık Yükleniyor...</div>
+        <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#" onclick="loadMarkdown('Duyurular')">Duyurular</a></li>
+            <li><a href="#" onclick="loadMarkdown('Atölye 1')">Atölye Notu 1</a></li>
+            <li><a href="#" onclick="loadMarkdown('Git-Github')">Git ve GitHub Rehberi</a></li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <!-- Başlangıçta Duyurular.md dosyasını yükler -->
+        <zero-md src="Notlar/Duyurular.md"></zero-md>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

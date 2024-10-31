@@ -1,0 +1,132 @@
+:root {
+    --primary-orange: #F78501;   /* Turuncu */
+    --primary-purple: #7232C5;   /* Koyu Mor */
+    --secondary-purple: #9B51E;  /* Açık Mor */
+    --secondary-purple-opaque: rgba(114, 50, 197, 0.45); /* %45 Opak Koyu Mor */
+    --primary-violet: #AA52FF;   /* Parlak Mor */
+    --primary-white: #FFFFFF;    /* Beyaz */
+    --primary-dark-blue: #141E42;/* Koyu Mavi */
+}
+
+/* Body ve Genel Ayarlar */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--white);
+    color: var(--secondary-dark-blue);
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body.dark {
+    background-color: #333;
+    color: var(--white);
+}
+
+.header {
+    background-color: var(--primary-orange);
+    color: var(--white);
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+/* Tema ve Burger İkon Renkleri */
+.burger-icon {
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--primary-purple);
+    border-radius: 5px;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--primary-blue);
+    border-radius: 5px;
+}
+
+body.dark .theme-toggle {
+    background-color: var(--secondary-yellow);
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    width: 200px;
+    position: fixed;
+    left: -200px; /* Başlangıçta gizli */
+    top: 50px;
+    height: calc(100% - 50px);
+    transition: left 0.3s; /* Yumuşak açılma */
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+body.sidebar-open .sidebar {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 15px;
+    cursor: pointer;
+}
+
+/* İçerik Alanı */
+.content {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: var(--secondary-yellow);
+    color: var(--secondary-dark-blue);
+    overflow-y: auto;
+    height: calc(100vh - 50px);
+    transition: margin-left 0.3s; /* Yumuşak geçiş sağlar */
+}
+/* Koyu Tema için Güncellemeler */
+body.dark {
+    background-color: #1C1C1E; /* Daha koyu bir arka plan */
+    color: #E5E5E5;            /* Hafif kırık beyaz metin */
+}
+
+
+body.dark .header {
+    background-color: #33334D; /* Header için koyu mor ton */
+}
+
+body.dark .sidebar {
+    background-color: #2C2C38; /* Sidebar için daha yumuşak koyu gri */
+    color: #FFFFFF;            /* Sidebar metinleri beyaz */
+}
+
+body.dark .content {
+    background-color: #3A3A47; /* İçerik alanında koyu ton */
+    color: #E5E5E5;            /* İçerik metinleri için kırık beyaz */
+}
+
+/* Tema ve Burger İkon Renkleri (Koyu Tema) */
+body.dark .burger-icon {
+    background-color: #7232C5; /* Mor tonlu burger icon */
+}
+
+body.dark .theme-toggle {
+    background-color: #F78501; /* Turuncu tema butonu */
+}
+
+/* Sidebar açıldığında içerik alanının sola kayması */
+body.sidebar-open .content {
+    margin-left: 200px; /* Sidebar açıkken sola kayma */
+}
