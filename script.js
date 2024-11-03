@@ -17,7 +17,7 @@ function loadCSV() {
                 }
             });
             // CSV yüklendikten sonra varsayılan Markdown dosyasını (Duyurular) yükle
-            loadMarkdown('Duyurular');
+            loadMarkdown('Git-Github');
         })
         .catch(error => console.error("CSV yüklenirken hata oluştu:", error));
 }
